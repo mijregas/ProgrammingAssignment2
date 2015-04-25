@@ -2,7 +2,7 @@
 ## ...based on makeCacheVector() and cachemean() from Coursera R Programming 
 
 makeCacheMatrix <- function(x = matrix()) {
-	## creates a special "matrix" which is really a list containing functions to:	
+    ## creates a special "matrix" which is really a list containing functions to:	
     ## 1. set the value of the matrix
     ## 2. get the value of the matrix
     ## 3. set the inverse
@@ -11,9 +11,9 @@ makeCacheMatrix <- function(x = matrix()) {
 	if (nrow(x) != ncol(x)) {
 		stop("Error in makeCacheMatrix(x) : x must be a square")
 	}
-    m <- NULL
-    set <- function(y) {
-        x <<- y
+	m <- NULL
+	set <- function(y) {
+		x <<- y
         m <<- NULL
     }
     get <- function() x
@@ -27,9 +27,9 @@ makeCacheMatrix <- function(x = matrix()) {
 ## This is the function that returns the inverse of the special "matrix"
 
 cacheSolve <- function(x, ...) {
-	## Return a matrix that is the inverse of 'x'
-	## Checks to see if the inverse has already been computed. 
-	## If so, it returns the cached inverse matrix and skips the new computation.
+    ## Return a matrix that is the inverse of 'x'
+    ## Checks to see if the inverse has already been computed. 
+    ## If so, it returns the cached inverse matrix and skips the new computation.
 
     m <- x$getinverse()
     if(!is.null(m)) {
